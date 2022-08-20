@@ -1,4 +1,6 @@
 import { useStateValue } from "./StateProvider";
+import RemoveShoppingCart from '@mui/icons-material/RemoveShoppingCart'
+import StarIcon from '@mui/icons-material/Star'
 
 const CartProduct = ({ id, image, title, price, rating }) => {
     const [{ basket }, dispatch] = useStateValue();
@@ -13,25 +15,30 @@ const CartProduct = ({ id, image, title, price, rating }) => {
     }
 
     return (
-        <div id={id} className="flex my-4 bg-slate-50 items-center p-2 ">
+        <div id={id} className="flex my-4  bg-white items-center p-2 ">
             <img className=" max-h-20 mr-4" src={image} alt="" />
             <div className="">
-                <p>{title}</p>
 
                 <div className="">
                     <small>$</small><strong>{price}</strong>
 
                 </div>
-
+                <p>{title}</p>
                 <div className='flex mt-2 '>
                     {Array(rating)
                         .fill()
                         .map((_, i) => (
 
-                            <p>👍🏻</p>
+                            
+                            <div className=' text-orange-500'>
+                                <StarIcon />
+                            </div>
                         ))}
                 </div>
-                <button onClick={removeFromBasket} className=' bg-[#f0c14b] text-[#111] border-1 px-4  mt-2 rounded font-bold'>Remove From Basket</button>
+                <div className=" p-3 rounded-full bg-gray-50 active:bg-blue-200 float-right " onClick={removeFromBasket} >
+                    <RemoveShoppingCart />
+                </div>
+              
             </div>
         </div>
     );

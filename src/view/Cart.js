@@ -8,13 +8,11 @@ const Cart = () => {
     const [{basket}, dispatch] = useStateValue();
     return (
 
-        <div className=" p-2 ro bg-white [height:max-content] grid grid-cols-7 grid-rows-6 gap-4">
+        <div className=" p-2  bg-slate-50  pt-[100px] [height:max-content] sm:grid sm:grid-cols-7 pb-20 sm:grid-rows-6 gap-4">
             <div className=" col-span-5 ">
-            <p className=" text-3xl pb-6  mb-3 border-b-2">Shopping Cart</p>
+            <p className=" sm:text-3xl pb-6  mb-3 border-b-2">Shopping Cart</p>
                 <div>
-                    {
-                 
-
+                     {
                         basket.map((item) => (
                             <CartProduct
                             id={item.id}
@@ -27,7 +25,7 @@ const Cart = () => {
                     }
                 </div>
             </div>
-        <div className=" col-span-2 row-span-1 ">
+        <div className=" col-span-5  sm:col-span-2 sm:row-span-1 ">
         <Subtotal />
         </div>
         </div>

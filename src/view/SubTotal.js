@@ -5,7 +5,7 @@ import { useStateValue } from "./StateProvider";
 const Subtotal = () => {
     const [{ basket }, dispatch] = useStateValue();
     return (
-        <div className=" bg-slate-100  p-5">
+        <div className=" bg-white  p-5">
             <CurrencyFormat
                 renderText={(value) => (
                     <>
@@ -27,7 +27,7 @@ const Subtotal = () => {
 
             />
 
-            <button className=' bg-[#f0c14b] text-[#111] border-1 px-4 w-full  h-[30px] rounded font-bold'>Proceed to checkout</button>
+            <button className=' bg-blue-800 text-white border-1 px-4 w-full  h-[30px] rounded font-bold'>Proceed to checkout</button>
         </div>
     );
 }
